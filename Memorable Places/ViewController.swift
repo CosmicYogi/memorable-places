@@ -113,6 +113,8 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
             annotation.coordinate = coordinates;
             annotation.subtitle = "This place is added to memorable places"
             map.addAnnotation(annotation)
+            
+            NSUserDefaults.standardUserDefaults().setObject(places, forKey: "placesList");
         }
     }
 }

@@ -16,7 +16,11 @@ class TableViewController: UITableViewController {
         if places.count == 1{
             places.removeAtIndex(0);
             places.append(["name":"VirginMonkStudios","lat":"27.175277","lon":"78.042128"])
-            //reloadInputViews()
+            
+            if NSUserDefaults.standardUserDefaults().objectForKey("placesList") != nil{
+                
+                places = NSUserDefaults.standardUserDefaults().objectForKey("placesList") as![Dictionary<String, String>]
+            }
         }
 
     }
@@ -59,6 +63,13 @@ class TableViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            places.removeAtIndex(indexPath.row);
+            tableView.reloadData();
+            NSUserDefaults.standardUserDefaults().setObject(places, forKey: "placesList");
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
