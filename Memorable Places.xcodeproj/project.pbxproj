@@ -12,6 +12,8 @@
 		9403A6F31CCBADF000FDDD50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9403A6F11CCBADF000FDDD50 /* Main.storyboard */; };
 		9403A6F51CCBADF000FDDD50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9403A6F41CCBADF000FDDD50 /* Assets.xcassets */; };
 		9403A6F81CCBADF000FDDD50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9403A6F61CCBADF000FDDD50 /* LaunchScreen.storyboard */; };
+		9403A7001CCBB66300FDDD50 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9403A6FF1CCBB66300FDDD50 /* CoreLocation.framework */; };
+		9403A7021CCBB9C800FDDD50 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403A7011CCBB9C800FDDD50 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9403A6F41CCBADF000FDDD50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9403A6F71CCBADF000FDDD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9403A6F91CCBADF000FDDD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9403A6FF1CCBB66300FDDD50 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9403A7011CCBB9C800FDDD50 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9403A7001CCBB66300FDDD50 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +43,7 @@
 		9403A6E11CCBADF000FDDD50 = {
 			isa = PBXGroup;
 			children = (
+				9403A6FF1CCBB66300FDDD50 /* CoreLocation.framework */,
 				9403A6EC1CCBADF000FDDD50 /* Memorable Places */,
 				9403A6EB1CCBADF000FDDD50 /* Products */,
 			);
@@ -57,6 +63,7 @@
 				9403A6ED1CCBADF000FDDD50 /* AppDelegate.swift */,
 				9403A6EF1CCBADF000FDDD50 /* ViewController.swift */,
 				9403A6F11CCBADF000FDDD50 /* Main.storyboard */,
+				9403A7011CCBB9C800FDDD50 /* TableViewController.swift */,
 				9403A6F41CCBADF000FDDD50 /* Assets.xcassets */,
 				9403A6F61CCBADF000FDDD50 /* LaunchScreen.storyboard */,
 				9403A6F91CCBADF000FDDD50 /* Info.plist */,
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9403A6F01CCBADF000FDDD50 /* ViewController.swift in Sources */,
+				9403A7021CCBB9C800FDDD50 /* TableViewController.swift in Sources */,
 				9403A6EE1CCBADF000FDDD50 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
