@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 
-var places: [String]?;
 class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDelegate{
     @IBOutlet var map: MKMapView!
 
@@ -23,10 +22,31 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
         manager = CLLocationManager();
         manager.delegate = self;
         manager.desiredAccuracy = kCLLocationAccuracyBest;
-        manager.requestWhenInUseAuthorization();
-        manager.startUpdatingLocation();
-        
-        var longPress = UILongPressGestureRecognizer(target: self, action: "addAnnotations:");
+
+        if (activePlace == -1){
+            manager.requestWhenInUseAuthorization();
+            manager.startUpdatingLocation();
+        }
+        else{
+            let latitude = Double(places[activePlace]["lat"]!);
+            let longitude = Double (places[activePlace]["lon"]!);
+            
+            let delx = 0.01;
+            let dely = 0.01;
+            
+            let span : MKCoordinateSpan = MKCoordinateSpanMake(delx, dely);
+            let coordinates : CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!);
+            let region : MKCoordinateRegion = MKCoordinateRegionMake(coordinates, span)
+            self.map.setRegion(region, animated: true);
+            
+            var annotation = MKPointAnnotation ();
+            annotation.coordinate = coordinates;
+            annotation.title = places[activePlace]["name"];
+            self.map.addAnnotation(annotation);
+            
+            
+        }
+        let longPress = UILongPressGestureRecognizer(target: self, action: "addAnnotations:");
         longPress.minimumPressDuration = 2;
         map.addGestureRecognizer(longPress);
         
@@ -87,6 +107,7 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
                 }
             }
             
+            places.append(["name":titleAnnotation,"lat":"\(coordinates.latitude)","lon":"\(coordinates.longitude)"]);
             var annotation = MKPointAnnotation();
             annotation.title = "Added \(titleAnnotation)";
             annotation.coordinate = coordinates;

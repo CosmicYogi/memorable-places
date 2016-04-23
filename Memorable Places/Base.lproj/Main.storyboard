@@ -9,7 +9,7 @@
         <!--Memorable Places-->
         <scene sceneID="mDr-XI-H9C">
             <objects>
-                <tableViewController id="YfK-5H-iAF" sceneMemberID="viewController">
+                <tableViewController id="YfK-5H-iAF" customClass="TableViewController" customModule="Memorable_Places" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QsO-P4-k8t">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +22,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cYK-AY-56q" kind="show" id="nhk-6F-Qvm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Memorable Places" id="kvr-Ig-uD6" userLabel="Memorable Places">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lvU-Tf-ypR">
                             <connections>
-                                <segue destination="cYK-AY-56q" kind="show" id="1kh-F7-wd7"/>
+                                <segue destination="cYK-AY-56q" kind="show" identifier="addNewLocationSegue" id="1kh-F7-wd7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -92,4 +95,7 @@
             <point key="canvasLocation" x="989" y="411"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1kh-F7-wd7"/>
+    </inferredMetricsTieBreakers>
 </document>
