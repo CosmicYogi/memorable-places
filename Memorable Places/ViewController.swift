@@ -105,14 +105,15 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
                 else{
                     print(errors);
                 }
+                places.append(["name":self.titleAnnotation,"lat":"\(coordinates.latitude)","lon":"\(coordinates.longitude)"]);
+                var annotation = MKPointAnnotation();
+                annotation.title = "Added \(self.titleAnnotation)";
+                annotation.coordinate = coordinates;
+                annotation.subtitle = "This place is added to memorable places"
+                self.map.addAnnotation(annotation)
             }
             
-            places.append(["name":titleAnnotation,"lat":"\(coordinates.latitude)","lon":"\(coordinates.longitude)"]);
-            var annotation = MKPointAnnotation();
-            annotation.title = "Added \(titleAnnotation)";
-            annotation.coordinate = coordinates;
-            annotation.subtitle = "This place is added to memorable places"
-            map.addAnnotation(annotation)
+
             
             NSUserDefaults.standardUserDefaults().setObject(places, forKey: "placesList");
         }
